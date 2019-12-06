@@ -1,0 +1,19 @@
+<table ng-if="found.length > 0" style="width: 100%; border: 1px solid black; text-align: center">
+    <tr>
+        <th style="border: 1px solid black; text-align: center">Name</th>
+        <th style="border: 1px solid black; text-align: center">Short name</th>
+        <th style="text-align: center">Description</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="item in found">
+        <td style="border: 1px solid black">{{ item.name }}</td>
+        <td style="border: 1px solid black">{{ item.short_name }}</td>
+        <td style="border: 1px solid black">{{ item.description }}</td>
+        <td style="border: 1px solid black"><button ng-click="onRemove({index: $index});">Don't want this one!</button></td>
+    </tr>
+</table>
+<div ng-if="found.length == 0" style="width: 100%;">
+    <div style="width: 100%;">
+        Nothing found!
+    </div>
+</div>
